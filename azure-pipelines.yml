@@ -82,7 +82,7 @@ stages:
           - task: AzureWebApp@1
             displayName: 'Deploy Azure Web App : atestbyk'
             inputs:
-              azureSubscription: $(azureServiceConnectionId)
+              azureSubscription: aconnection
               appName: $(webAppName)
               package: $(Pipeline.Workspace)/drop/$(Build.BuildId).zip
               startUpCommand: 'gunicorn --bind=0.0.0.0 --workers=4 startup:app'
